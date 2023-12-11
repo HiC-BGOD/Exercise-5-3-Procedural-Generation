@@ -1,21 +1,21 @@
 
-# Exercise 5.3—Procedural Generation
+# My3D-Game
 
-Exercise for MSCH-C220
+Project 5 3D
 
-An implementation of a procedurally-generated 3D maze. Also, a simple in-game menu.
+3D Maze-Game 
 
 ## Implementation
 
-Built using Godot 4.1.1
+Built using Godot 4
 
 ## References
 
-This project is an adaptation of the excellent tutorial from [KidsCanCode](https://kidscancode.org/blog/2018/08/godot3_procgen1/)
+https://kaylousberg.itch.io/kaykit-adventurers
 
 ## Future Development
 
-None
+Add a lot more 
 
 ## Created by 
 
