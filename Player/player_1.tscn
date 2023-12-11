@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://mdiyixp3w4oh"]
+
+[ext_resource type="PackedScene" uid="uid://dv5yrf8jl44bo" path="res://Rain.glb" id="1_w5hpp"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0rb3w"]
+radius = 0.340638
+height = 1.70952
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_5m6ih"]
+graph_offset = Vector2(-42.947, 10.3744)
+
+[node name="Player1" type="CharacterBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.796497, 0)
+shape = SubResource("CapsuleShape3D_0rb3w")
+
+[node name="Rain" parent="." instance=ExtResource("1_w5hpp")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Rain"]
+root_node = NodePath("../..")
+
+[node name="AnimationTree" type="AnimationTree" parent="Rain"]
+tree_root = SubResource("AnimationNodeBlendTree_5m6ih")
+anim_player = NodePath("../AnimationPlayer")
+active = true
