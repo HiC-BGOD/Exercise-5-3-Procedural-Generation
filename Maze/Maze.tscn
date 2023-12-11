@@ -1,9 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://bcbwrbsjah711"]
+[gd_scene load_steps=7 format=3 uid="uid://bcbwrbsjah711"]
 
 [ext_resource type="Script" path="res://Maze/Maze.gd" id="1"]
-[ext_resource type="PackedScene" uid="uid://bviju1t8m7hvx" path="res://Player/player.tscn" id="2_ey845"]
+[ext_resource type="PackedScene" uid="uid://ce0lwh50nlme7" path="res://Player/knight.tscn" id="2_nm5kt"]
 [ext_resource type="Script" path="res://UI/Menu.gd" id="3"]
-[ext_resource type="PackedScene" uid="uid://mdiyixp3w4oh" path="res://Player/player_1.tscn" id="4_t5y4m"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ej5nb"]
 
@@ -19,12 +18,11 @@ sky = SubResource("Sky_ll71v")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_hwnoi")
 
+[node name="Knight" parent="." instance=ExtResource("2_nm5kt")]
+
 [node name="Maze" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, -2, -0.5)
 script = ExtResource("1")
-
-[node name="Player" parent="." instance=ExtResource("2_ey845")]
-visible = false
 
 [node name="Menu" type="Control" parent="."]
 process_mode = 3
@@ -75,8 +73,6 @@ offset_bottom = 100.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Quit"
-
-[node name="Player1" parent="." instance=ExtResource("4_t5y4m")]
 
 [connection signal="pressed" from="Menu/Restart" to="Menu" method="_on_Restart_pressed"]
 [connection signal="pressed" from="Menu/Quit" to="Menu" method="_on_Quit_pressed"]
